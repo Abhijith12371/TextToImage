@@ -1,0 +1,217 @@
+/* Global styles */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+  /* Container styles */
+  .container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  /* Header styles */
+  h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+  
+  /* Textarea styles */
+  textarea {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    outline: none;
+    resize: none;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  textarea:focus {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+  }
+  
+  /* Button styles */
+  button {
+    width: 100%;
+    background: #2575fc;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background: #6a11cb;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }
+  
+  /* Output styles */
+  #output {
+    margin-top: 20px;
+  }
+  
+  #output img {
+    max-width: 100%;
+    height: auto;
+    max-height: 80vh; /* Prevents large images from breaking layout */
+    margin-top: 20px;
+    border-radius: 10px;
+    object-fit: contain;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Spinner styles */
+  #spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 1200px) {
+    .container {
+      padding: 15px;
+    }
+  
+    textarea {
+      height: 100px;
+      font-size: 14px;
+    }
+  
+    button {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      width: 95%;
+      max-width: 90%;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    textarea {
+      height: 90px;
+      font-size: 14px;
+    }
+  
+    button {
+      font-size: 15px;
+    }
+  
+    #output img {
+      max-height: 60vh;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  
+    textarea {
+      height: 80px;
+      font-size: 12px;
+    }
+  
+    button {
+      font-size: 14px;
+    }
+  
+    #output img {
+      max-height: 50vh;
+    }
+  }
+  /* Update image styles */
+#output img {
+    max-width: 100%;
+    max-height: 80vh; /* Limit image height */
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    object-fit: cover; /* Ensures images fill the container while maintaining aspect ratio */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Additional CSS to ensure landscape aspect */
+  @media (max-width: 768px) {
+    #output img {
+      max-width: 100%;
+      max-height: 60vh; /* Prevent images from taking up too much space */
+      object-fit: contain; /* Ensures aspect ratio is preserved */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #output img {
+      max-width: 100%;
+      max-height: 50vh; /* Maintain appropriate size on smaller devices */
+      object-fit: contain;
+    }
+  }
+  
